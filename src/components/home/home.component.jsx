@@ -1,13 +1,21 @@
 import React, { Fragment } from "react";
+import Aboutus from "../about-us/about-us.component";
 import Card from "../card/card.component";
+import RecentQuestion from "../recent-question.component";
 
 const Home = () => {
   return (
     <Fragment>
+      <div className="container text-center">
         <p> working i guess</p>
-      <img src="..." class="img-fluid" alt="..." />
-      {/* <RecentQuestion /> */}
-      <Card title='Recent Question' subject="math" totalQuestion="5" time="50 min"/>
+        <img src="..." className="img-fluid" alt="..." />
+        <div className="">
+        <RecentQuestion recentTitle="Recent Model Question" />
+        <RecentQuestion recentTitle="Recent Mock Test" />
+        <RecentQuestion recentTitle="Recent Quiz" />
+        <Aboutus />
+        </div>
+      </div>
     </Fragment>
   );
 };

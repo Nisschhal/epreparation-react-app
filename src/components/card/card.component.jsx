@@ -3,16 +3,16 @@ import React, { Fragment } from "react";
 const Card = ( {title, subject, totalQuestions, time}) => {
   return (
     <Fragment>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{title}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{subject}</h6>
+      <div className="card" >
+        <div className="card-body">
+          <h5 className="card-title">{title}</h5>
+          <h6 className="card-subtitle mb-2 text-muted">{subject}</h6>
           <div className="info">
-            <span class="card-text">{totalQuestions}</span>
-            <span class="card-text">{time}</span>
+            <span className="card-text">{totalQuestions}</span>
+            <span className="card-text">{time}</span>
           </div>
           <button className="btn btn-primary">
-          <a href="#" class="card-link">
+          <a href="#" className="card-link text-white">
             View
           </a>
           </button>
