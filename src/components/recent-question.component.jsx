@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import Card from './card/card.component';
 
 const RecentQuestion = ({recentTitle}) => {
@@ -9,7 +10,7 @@ const RecentQuestion = ({recentTitle}) => {
             <Card title='Recent Question' subject="math" totalQuestion="5" time="50 min"/>
             <Card title='Recent Question' subject="math" totalQuestion="5" time="50 min"/>
             </div>
-            <button className='btn btn-secondary m-2'>View All</button>
+            <Link className='btn btn-secondary' to='model-question'>View All</Link>
         </Fragment>
     );
 };

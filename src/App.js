@@ -7,6 +7,7 @@ import Footer from "./components/navigation/footer.component";
 import Navigation from "./components/navigation/navigation.component";
 // import Authentication from "./routes/authentication/authentication.component";
 import QuestionPage from "./components/model-question/question-page.component";
+import Aboutus from "./components/about-us/about-us.component";
 const App = () => {
   return (
     <Fragment>
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path="model-question" element={<QuestionPage />} />
+      <Route path="about-us" element={<Aboutus />} />
       </Routes>
       <Footer />  
     </Fragment>
