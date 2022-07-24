@@ -2,7 +2,7 @@
 import React from 'react';
 import Card from '../card/card.component';
 
-const QuestionPage = () => {
+const MockQuestions = ({ mocks }) => {
     return (
         <div className='container'>
             <div className="d-flex justify-content-between">
@@ -30,4 +30,6 @@ const QuestionPage = () => {
     );
 };
 
-export default QuestionPage;
+
+export default MockQuestions;
+
