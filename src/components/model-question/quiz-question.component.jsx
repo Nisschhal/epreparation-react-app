@@ -19,10 +19,20 @@ const QuizQuestions = ({ quizes }) => {
 
             
             <div className="row">
-            <div className="col-lg-3">
-                <Card title='Recent Question' subject="math" totalQuestion="5" time="50 min"/>
-                </div>
+        {quizes.map((quiz) => {
+           const {_id, setTitle, subject, setQuestions, time} = quiz;
+          return (
+            <div key={_id} className="col-lg-3">
+              <Card
+                title={setTitle}
+                subject={subject}
+                totalQuestions={setQuestions.length}
+                time={time}
+              />
             </div>
+          );
+        })}
+      </div>
             
             
         </div>
