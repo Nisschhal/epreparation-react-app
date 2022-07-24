@@ -7,6 +7,8 @@ const RecentQuestion = ({ recentTitle, url, questions }) => {
     <Fragment>
       <h1>{recentTitle}</h1>
         <div className="row d-flex justify-content-center">
+
+            {/* listing all question thrown in the this.props. */}
           {questions.map((question) => {
             const { _id, setTitle, subject, setQuestions, time } = question;
             return (

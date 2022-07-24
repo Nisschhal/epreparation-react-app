@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import QuestionTest from "../model-question/test.compnent";
 
 const Card = ( {title, subject, totalQuestions, time}) => {
   return (
@@ -13,9 +14,9 @@ const Card = ( {title, subject, totalQuestions, time}) => {
           </div>
          <div className="row">
           <div className="col">Free</div>
-          <a href="#" className="col btn btn-outline-success p-0 m-0 card-link">
+          <button type="button" onClick={()=> {console.log()}} className="col btn btn-outline-success p-0 m-0 card-link">
             View
-          </a>
+          </button>
          </div>
         </div>
       </div>

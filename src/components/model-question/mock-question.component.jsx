@@ -32,6 +32,15 @@ const MockQuestions = ({ mocks }) => {
           );
         })}
       </div>
+
+      <div className="row">
+        <div className="col-4">
+          <button> Create New Model Set</button>
+        </div>
+        <div className="col-4">
+          <button> Create Mock Questions</button>
+        </div>
+      </div>
     </div>
   );
 };
