@@ -61,7 +61,7 @@ const App = () => {
     <Fragment>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home models={modelQuestion} mocks={mockQuestion} quizes={quizQuestion} />} />
         <Route
           path="model-question"
           element={<ModelQuestions models={modelQuestion} />}
