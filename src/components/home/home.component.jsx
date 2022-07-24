@@ -10,9 +10,9 @@ const Home = () => {
         <p> working i guess</p>
         <img src="..." className="img-fluid" alt="..." />
         <div className="">
-        <RecentQuestion recentTitle="Recent Model Question" />
-        <RecentQuestion recentTitle="Recent Mock Test" />
-        <RecentQuestion recentTitle="Recent Quiz" />
+        <RecentQuestion recentTitle="Recent Model Question" url="model-question" />
+        <RecentQuestion recentTitle="Recent Mock Test" url="mock-test" />
+        <RecentQuestion recentTitle="Recent Quiz" url="quiz"/>
         <Aboutus />
         </div>
       </div>

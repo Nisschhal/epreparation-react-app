@@ -7,15 +7,16 @@ const Card = ( {title, subject, totalQuestions, time}) => {
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <h6 className="card-subtitle mb-2 text-muted">{subject}</h6>
-          <div className="info">
-            <span className="card-text">{totalQuestions}</span>
-            <span className="card-text">{time}</span>
+          <div className="row">
+            <span className="col card-text">{totalQuestions} question</span>
+            <span className="col card-text">{time}</span>
           </div>
-          <button className="btn btn-primary">
-          <a href="#" className="card-link text-white">
+         <div className="row">
+          <div className="col">Free</div>
+          <a href="#" className="col btn btn-outline-success p-0 m-0 card-link">
             View
           </a>
-          </button>
+         </div>
         </div>
       </div>
     </Fragment>
