@@ -11,7 +11,7 @@ const Home = ({models, mocks, quizes}) => {
         {/* <img src="..." className="img-fluid" alt="..." /> */}
         <div className="">
         <RecentQuestion recentTitle="Recent Model Question" url="model-question" questions={models} />
-        <RecentQuestion recentTitle="Recent Mock Test" url="mock-test" questions={mocks} />
+        <RecentQuestion recentTitle="Recent Mock Test" url="mock-question" questions={mocks} />
         <RecentQuestion recentTitle="Recent Quiz" url="quiz" questions={quizes}/>
         <Aboutus />
         </div>

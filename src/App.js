@@ -67,7 +67,7 @@ const App = () => {
           element={<ModelQuestions models={modelQuestion} />}
         />
         <Route
-          path="mock-text"
+          path="mock-question"
           element={<MockQuestions mocks={mockQuestion} />}
         />
         <Route path="quiz" element={<QuizQuestions quizes={quizQuestion} />} />

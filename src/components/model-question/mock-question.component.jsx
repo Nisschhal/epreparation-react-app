@@ -1,27 +1,25 @@
-
-import React from 'react';
-import Card from '../card/card.component';
+import React from "react";
+import Card from "../card/card.component";
 
 const MockQuestions = ({ mocks }) => {
-    return (
-        <div className='container'>
-            <div className="d-flex justify-content-between">
-                <h3>Model Question</h3>
-                <button className='btn btn-success'>Go to Home</button>
-            </div>
+  return (
+    <div className="container">
+      <div className="d-flex justify-content-between">
+        <h3>Model Question</h3>
+        <button className="btn btn-success">Go to Home</button>
+      </div>
 
-            <div className="d-flex justify-content-between">
-                <p>search</p>
-                <div className="filter ">
-                    <span>Subject </span>
-                    <span>Sort</span>
-                </div>
-            </div>
+      <div className="d-flex justify-content-between">
+        <p>search</p>
+        <div className="filter ">
+          <span>Subject </span>
+          <span>Sort</span>
+        </div>
+      </div>
 
-            
-            <div className="row">
+      <div className="row">
         {mocks.map((mock) => {
-           const {_id, setTitle, subject, setQuestions, time} = mock;
+          const { _id, setTitle, subject, setQuestions, time } = mock;
           return (
             <div key={_id} className="col-lg-3">
               <Card
@@ -34,12 +32,8 @@ const MockQuestions = ({ mocks }) => {
           );
         })}
       </div>
-            
-            
-        </div>
-    );
+    </div>
+  );
 };
 
-
 export default MockQuestions;
-

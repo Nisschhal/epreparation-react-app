@@ -43,7 +43,7 @@ const Navigation = () => {
               {/* MOCK QUESTION NAV LINKS */}
 
               <li className="nav-item">
-                <Link className="nav-link" to="mock-test">
+                <Link className="nav-link" to="mock-question">
                   Mock Test
                 </Link>
               </li>
