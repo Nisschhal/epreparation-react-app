@@ -40,7 +40,7 @@ const Navigation = () => {
                 </Link>
               </li>
 
-              {/* MOCK QUESTION DROP DOWN NAV LINKS */}
+              {/* MOCK QUESTION NAV LINKS */}
 
               <li className="nav-item">
                 <Link className="nav-link" to="mock-test">
@@ -48,9 +48,18 @@ const Navigation = () => {
                 </Link>
               </li>
 
+
+              {/* Quiz QUESTION NAV LINKS */}
+
+              <li className="nav-item">
+                <Link className="nav-link" to="quiz">
+                  Quiz
+                </Link>
+              </li>
+
               {/* QUIZ QUESTION DROP DOWN NAV LINKS */}
 
-              <li className="nav-item dropdown">
+              {/* <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
                   href="/"
@@ -78,7 +87,9 @@ const Navigation = () => {
                     </a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
+
+
               <li className="nav-item">
                 <Link className="nav-link" to='contact-us'> Contact Us</Link>
               </li>

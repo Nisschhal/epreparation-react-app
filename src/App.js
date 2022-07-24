@@ -17,7 +17,7 @@ const App = () => {
   const [mockQuestion, setMockQuestion] = useState([]);
   const [quizQuestion, setQuizQuestion] = useState([]);
   const getMockQuestions = () => {
-    axios.get("http://localhost:300/mock-quesitons").then((response) => {
+    axios.get("http://localhost:300/mock-questions").then((response) => {
       setMockQuestion(response.data);
     });
   }
