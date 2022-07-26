@@ -25,6 +25,7 @@ const Dashboard=()=>{
             console.log(e);
         })
     },[])
+
     return(
         <div className="container bg-primary">
             <div className="row">

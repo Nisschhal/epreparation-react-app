@@ -1,7 +1,26 @@
+import axios from "axios";
 import React, { Fragment } from "react";
 import QuestionTest from "../model-question/test.compnent";
 
-const Card = ( {title, subject, totalQuestions, time, imageUrl}) => {
+const Card = ( {id, title, subject, totalQuestions, time, imageUrl, url}) => {
+
+  const config ={
+    headers:{
+        Authorization: "Bearer " + localStorage.getItem("ticket"),
+    }
+}
+  const deleteSet = () => {
+    axios.delete(`http://localhost:300/model-questions/${id}`, config).then(result=>{
+      console.log(result);
+      if(result.data.success){
+          window.location.reload({url})
+      }
+  })
+  .catch(e=>{
+      console.log(e)
+  })
+  }
+
   return (
     <Fragment>
       <div className="card" >
@@ -18,6 +37,12 @@ const Card = ( {title, subject, totalQuestions, time, imageUrl}) => {
           <div className="col">Free</div>
           <button type="button" onClick={()=> {console.log()}} className="col btn btn-outline-success p-0 m-0 card-link">
             View
+          </button>
+          <button type="button" onClick={()=> {console.log()}} className="col btn btn-outline-success p-0 m-0 card-link">
+            Edit
+          </button>
+          <button type="button" onClick={()=> {console.log()}} className="col btn btn-outline-success p-0 m-0 card-link">
+            Delete
           </button>
          </div>
         </div>

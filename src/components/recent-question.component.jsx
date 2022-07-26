@@ -13,6 +13,7 @@ const RecentQuestion = ({ recentTitle, url, questions }) => {
           return (
             <div key={_id} className="col-sm-3">
               <Card
+                id={_id}
                 imageUrl={`http://localhost:300/${imageUrl}`}
                 title={setTitle}
                 subject={subject}

@@ -25,6 +25,9 @@ const ModelQuestions = ({ models }) => {
           return (
             <div key={_id} className="col-lg-3">
               <Card
+                              id={_id}
+                              url={'model-questions'}
+
                 imageUrl={`http://localhost:300/${imageUrl}`}
                 title={setTitle}
                 subject={subject}
