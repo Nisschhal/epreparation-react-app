@@ -23,7 +23,7 @@ const Login= () =>{
                 localStorage.setItem("ticket",response.data.token)
 
                 //redirects to home
-                window.location.replace("/home")
+                window.location.replace("/")
             }
             else{
                 alert("Invalid credential !")

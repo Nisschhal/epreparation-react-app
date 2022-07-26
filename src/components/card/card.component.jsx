@@ -13,8 +13,9 @@ const Card = ( {id, title, subject, totalQuestions, time, imageUrl, url}) => {
     axios.delete(`http://localhost:300/model-questions/${id}`, config).then(result=>{
       console.log(result);
       if(result.data.success){
-          window.location.reload({url})
+        alert("Question Set Deleted Successfully!!")
       }
+      window.location.reload()
   })
   .catch(e=>{
       console.log(e)
@@ -41,7 +42,7 @@ const Card = ( {id, title, subject, totalQuestions, time, imageUrl, url}) => {
           <button type="button" onClick={()=> {console.log()}} className="col btn btn-outline-success p-0 m-0 card-link">
             Edit
           </button>
-          <button type="button" onClick={()=> {console.log()}} className="col btn btn-outline-success p-0 m-0 card-link">
+          <button type="button" onClick={()=> deleteSet()} className="col btn btn-outline-success p-0 m-0 card-link">
             Delete
           </button>
          </div>
