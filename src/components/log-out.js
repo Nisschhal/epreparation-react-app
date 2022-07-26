@@ -1,6 +1,6 @@
 const Logout = ()=>{
     localStorage.clear();
-    window.location.replace("/log")
+    window.location.replace("/home")
 }
 
 export default Logout;

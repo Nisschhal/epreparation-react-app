@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logout from "../log-out";
 
 const Navigation = () => {
   // checking if the user is logged in
@@ -9,13 +10,18 @@ const Navigation = () => {
       <>
         <ul className="navbar-nav mb-2 mb-lg-0">
           <li className="nav-item">
-            <a className="nav-link" href="/dash">
+            <a className="nav-link" href="/dashboard">
               Dashboard
             </a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/profileU">
               Profile Update
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" role="button" onClick={Logout} >
+              Log out
             </a>
           </li>
         </ul>
@@ -142,7 +148,6 @@ const Navigation = () => {
 
               <li className="nav-item">
                 <Link className="nav-link" to="contact-us">
-                  {" "}
                   Contact Us
                 </Link>
               </li>

@@ -14,6 +14,8 @@ import axios from "axios";
 import CreateNewSet from "./components/create-set-question/create-new-set.component";
 import Register from "./components/sign-up/sign-up.component";
 import Login from "./components/login-in/login-in.component";
+import Dashboard from "./components/dashboard/dashboard.component";
+import PrivateRoute from "./components/private-route";
 const App = () => {
   const [modelQuestion, setModelQuestion] = useState([]);
 
@@ -40,22 +42,22 @@ const App = () => {
 
   console.log(modelQuestion);
 
-  // const getMockQuestion = () => {
-  //   axios.get(`http://localhost:3000/mock-quesitons`)
-  //     .then(res => {
-  //       const mockQuestions = res.data;
-  //       console.log(mockQuestions);
-  //       setMockQuestion(mockQuestions);
-  //     }) };
+  const getMockQuestion = () => {
+    axios.get(`http://localhost:3000/mock-quesitons`)
+      .then(res => {
+        const mockQuestions = res.data;
+        console.log(mockQuestions);
+        setMockQuestion(mockQuestions);
+      }) };
 
-  // const getQuizQuestion = () => {
-  //   axios.get(`http://localhost:3000/quiz-questions`)
-  //     .then(res => {
-  //       const quizQuestions = res.data;
-  //       console.log(quizQuestions);
-  //       setQuizQuestion(quizQuestions);
-  //     })
-  // };
+  const getQuizQuestion = () => {
+    axios.get(`http://localhost:3000/quiz-questions`)
+      .then(res => {
+        const quizQuestions = res.data;
+        console.log(quizQuestions);
+        setQuizQuestion(quizQuestions);
+      })
+  };
 
   return (
     <Fragment>
@@ -73,6 +75,13 @@ const App = () => {
               quizes={quizQuestion}
             />
           }
+        />
+        <Route
+          path="dashboard"
+          element={<PrivateRoute>
+            <Dashboard />
+            </PrivateRoute>
+            }
         />
         <Route
           path="model-question"
