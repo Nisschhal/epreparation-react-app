@@ -11,7 +11,7 @@ import QuizQuestions from "./components/model-question/quiz-question.component";
 
 import Aboutus from "./components/about-us/about-us.component";
 import axios from "axios";
-import QuestionTest from "./components/model-question/test.compnent";
+import CreateNewSet from "./components/create-set-question/create-new-set.component";
 const App = () => {
   const [modelQuestion, setModelQuestion] = useState([]);
 
@@ -73,7 +73,13 @@ const App = () => {
         />
         <Route path="quiz" element={<QuizQuestions quizes={quizQuestion} />} />
         <Route path="about-us" element={<Aboutus />} />
-        <Route path="test/:id" element={<QuestionTest />} />
+        {/* <Route path="test/:id" element={<QuestionTest />} /> */}
+
+        <Route
+          path="new-set"
+          element={<CreateNewSet  />}
+        />
+
       </Routes>
       <Footer />
     </Fragment>

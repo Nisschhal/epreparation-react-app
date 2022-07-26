@@ -2,6 +2,35 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
+
+  // checking if the user is logged in 
+  var menu;
+  if(localStorage.getItem("ticket")){
+    menu = (
+      <>
+        <li className="nav-item">
+            <a className="nav-link" href="/dash">Dashboard</a>
+        </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/profileU">Profile Update</a>
+        </li>
+      </>
+    )
+
+  }
+  else{
+      menu = (
+          <>
+           <li className="nav-item active">
+        <a className="nav-link" href="/reg">Register </a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="/log">Login</a>
+      </li>
+          </>
+      )
+  }
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -56,6 +85,20 @@ const Navigation = () => {
                   Quiz
                 </Link>
               </li>
+              {/* For Admin access to add new Set */}
+
+              <li className="nav-item">
+                <Link className="nav-link" to="new-set">
+                  Add Set
+                </Link>
+              </li>
+              {/* For Admin access to add new Questions Set */}
+
+              <li className="nav-item">
+                <Link className="nav-link" to="quiz">
+                  Add Set Questions
+                </Link>
+              </li>
 
               {/* QUIZ QUESTION DROP DOWN NAV LINKS */}
 
@@ -105,6 +148,8 @@ const Navigation = () => {
                 Search
               </button>
             </form>
+
+            {menu}
           </div>
         </div>
       </nav>

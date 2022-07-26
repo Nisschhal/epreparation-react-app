@@ -20,10 +20,12 @@ const ModelQuestions = ({ models }) => {
 
       <div className="row">
         {models.map((model) => {
-           const {_id, setTitle, subject, setQuestions, time} = model;
+          const {_id, setTitle, subject, setQuestions, time, imageUrl} = model;
+          {console.log(imageUrl)}
           return (
             <div key={_id} className="col-lg-3">
               <Card
+                imageUrl={imageUrl}
                 title={setTitle}
                 subject={subject}
                 totalQuestions={setQuestions.length}
