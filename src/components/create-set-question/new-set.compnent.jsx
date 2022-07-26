@@ -1,160 +1,90 @@
-import axios from "axios";
-import { useState } from "react";
-
-const defaultFormFields = {
-  subject: "",
-  questionType: "",
-  time: "",
-  totalScore: "",
-  set: "",
-  setTitle: "",
-  setQuestions: [Object],
-};
-
-const NewSet = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
-  const [subject, questionType, time, totalScore, set, setTitle] = formFields;
-
-  const resetFormFields = () => {
-    setFormFields(defaultFormFields);
-  };
-
-  const submitHandler = async (event) => {
-    // restricts all the default funcationality of the form so the we can handle submit form as we desire
-    event.preventDefault();
-
-    try {
-      // registering into firebase authentication
-      // and accessing user form response UserImp
-      // creating userDoc into db form authenticaiton giving extracted user from above and ADDING additional infromation to spread into the user doc
-      // here displayname and phoneNumber from the input fields to add inthe db
-      const newSet = await axios(
-        "http://localhost:300/model-questions/insert",
-        formFields
-      );
-      if (newSet) {
-        console.log(newSet);
-        alert("Question Set Successfully Registered");
-      }
-      resetFormFields();
-    } catch (err) {
-      // if (err.code === "auth/email-already-in-use"){
-      //     alert("Couldn't register User, Email Address already exits!!")
-      // }
-      console.log(
-        "Error while setting question set",
-        err.message
-      );
-    }
-  };
-
-  const changeHandler = (event) => {
-    // object d-structuring for the event's name and value
-    // name gives the specified name in the input field name="eventName"
-    const { name, value } = event.target;
-
-    // only updating one field at a time so spreading the form fields
-    setFormFields({ ...formFields, [name]: value });
-  };
-
-  return (
-    
-    <div className="container">
-      <h1 className="text-center">Create a New Set</h1>
-      <div className="row d-flex justify-content-center">
-        <div className="col-4">
-          <form onSubmit={submitHandler}>
-            <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="subject"
-                placeholder="Science"
-                onChange={changeHandler}
-                value={subject}
-              />
-              <label for="subject">Subject</label>
-            </div>
-
-            <div class="form-floating mb-3">
-              <input
-                type="number"
-                class="form-control"
-                id="time"
-                placeholder="30 minutes"
-                value={time}
-                onChange={changeHandler}
+// import {useState} from 'react';
+// import axios from 'axios';
+// import React from 'react';
 
 
-              />
-              <label for="time">Total Time</label>
-            </div>
+// const Product= () =>{
+//     const [name,setName] =useState('');
+//     const [price,setPrice] = useState('');
+//     const [description,setDescription] = useState('');
+//     const [qty,setQty] = useState('');
+//     const [image,setImage] = useState('');
+//     const [userId] =useState('');
 
-            <div class="form-floating mb-3">
-              <input
-                type="number"
-                class="form-control"
-                id="totalScore"
-                placeholder="100"
-                value={totalScore}
-                onChange={changeHandler}
+//    const ProductAdd=(e)=>{
+//         e.preventDefault();
+//         // const data ={
+//         //   name: name,
+//         //   price: price,
+//         //   description: description,
+//         //   qty: qty,
+//         //   userId: userId,
+//         // }
+
+//         const data = new FormData();
+//         data.append("name", name);
+//         data.append("price", price);
+//         data.append("description", description);
+//         data.append("qty", qty);
+//         data.append("userId", userId);
+//         data.append("image", image);
+
+//         const config ={
+//             headers:{
+//                 Authorization: "Bearer " + localStorage.getItem("ticket"),
+//             }
+//         }
+
+//         axios.post("http://localhost:90/product/insert",data, config)
+        
+//         .then(response=>{
+//             console.log(response)
+//         })
+//         .catch(e=>{
+//             console.log(e)
+//         })
+
+//    }
+
+  
+   
+//    return(
+//     <div className="container">
+//         <div className="row">
+//             <div className="col-md-4">
+//                 <h1>Add Product</h1>
+//                 {userId}
+//                 <form>
+//                     <div className="form-group">
+//                         <label>Name</label>
+//                         <input type='text' className="form-control" onChange={(e)=>{setName(e.target.value)}}/>
+//                     </div>
+//                     <div className="form-group">
+//                         <label>Price</label>
+//                         <input type='text' className="form-control" onChange={(e)=>{setPrice(e.target.value)}}/>
+//                     </div>
+//                     <div className="form-group">
+//                         <label>Description</label>
+//                         <input type='text' className="form-control" onChange={(e)=>{setDescription(e.target.value)}}/>
+//                     </div>
+//                     <div className="form-group">
+//                         <label>Qty</label>
+//                         <input type='text' className="form-control" onChange={(e)=>{setQty(e.target.value)}}/>
+//                     </div>
+//                     <div className='form-group'>
+//                         <label>Product Image</label>
+//                         <input type='file' className="form-control" onChange={(e)=>{setImage(e.target.files[0])}}/>
+//                     </div>
+//                     <div className="form-group">
+//                         <input type="submit" onClick={ProductAdd}/>
+//                     </div>
+                    
+//                 </form>
+//             </div>
+//         </div>
+//     </div>
+// );
+// }
 
 
-              />
-              <label for="totalScore">Total Score</label>
-            </div>
-
-            <div class="form-floating mb-3">
-              <input
-                type="number"
-                class="form-control"
-                id="set"
-                placeholder="100"
-                value={set}
-                onChange={changeHandler}
-
-
-              />
-              <label for="set">Set no.</label>
-            </div>
-
-            <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="setTitle"
-                placeholder="name@example.com"
-                value={setTitle}
-                onChange={changeHandler}
-
-
-              />
-              <label for="setTitle">Set Title</label>
-            </div>
-
-
-            <div class="form-floating mb-3">
-              <select class="form-select" aria-label="Default select example">
-                <option selected>---------</option>
-                <option value={questionType}>Model Question</option>
-                <option value={questionType}>Mock Test</option>
-                <option value={questionType}>Quiz</option>
-              </select>
-              <label for="setTitle">Question Type</label>
-            </div>
-
-            {/* <div class="d-flex">
-              <label for="myfile">Select a Photo:</label>
-              <input type="file" id="myfile" name="file" ></input>
-            </div> */}
-            <button type="submit" class="btn btn-primary">
-              Submit
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default NewSet;
+// export default Product;
