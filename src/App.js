@@ -12,6 +12,8 @@ import QuizQuestions from "./components/model-question/quiz-question.component";
 import Aboutus from "./components/about-us/about-us.component";
 import axios from "axios";
 import CreateNewSet from "./components/create-set-question/create-new-set.component";
+import Register from "./components/sign-up/sign-up.component";
+import Login from "./components/login-in/login-in.component";
 const App = () => {
   const [modelQuestion, setModelQuestion] = useState([]);
 
@@ -21,14 +23,12 @@ const App = () => {
     axios.get("http://localhost:300/mock-questions").then((response) => {
       setMockQuestion(response.data);
     });
-  }
+  };
   const getQuizQuestions = () => {
-
     axios.get("http://localhost:300/quiz-questions").then((response) => {
       setQuizQuestion(response.data);
     });
-    
-  }
+  };
 
   useEffect(() => {
     axios.get("http://localhost:300/model-questions").then((response) => {
@@ -37,8 +37,8 @@ const App = () => {
     getMockQuestions();
     getQuizQuestions();
   }, []);
-  
-  console.log(modelQuestion)
+
+  console.log(modelQuestion);
 
   // const getMockQuestion = () => {
   //   axios.get(`http://localhost:3000/mock-quesitons`)
@@ -47,7 +47,6 @@ const App = () => {
   //       console.log(mockQuestions);
   //       setMockQuestion(mockQuestions);
   //     }) };
-
 
   // const getQuizQuestion = () => {
   //   axios.get(`http://localhost:3000/quiz-questions`)
@@ -62,7 +61,19 @@ const App = () => {
     <Fragment>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Home models={modelQuestion} mocks={mockQuestion} quizes={quizQuestion} />} />
+        <Route path="signup" element={<Register />}></Route>
+        <Route path="login" element={<Login />}></Route>
+
+        <Route
+          path="/home"
+          element={
+            <Home
+              models={modelQuestion}
+              mocks={mockQuestion}
+              quizes={quizQuestion}
+            />
+          }
+        />
         <Route
           path="model-question"
           element={<ModelQuestions models={modelQuestion} />}
@@ -75,11 +86,7 @@ const App = () => {
         <Route path="about-us" element={<Aboutus />} />
         {/* <Route path="test/:id" element={<QuestionTest />} /> */}
 
-        <Route
-          path="new-set"
-          element={<CreateNewSet  />}
-        />
-
+        <Route path="new-set" element={<CreateNewSet />} />
       </Routes>
       <Footer />
     </Fragment>

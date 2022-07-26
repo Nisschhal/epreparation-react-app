@@ -2,33 +2,42 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
-
-  // checking if the user is logged in 
+  // checking if the user is logged in
   var menu;
-  if(localStorage.getItem("ticket")){
+  if (localStorage.getItem("ticket")) {
     menu = (
       <>
-        <li className="nav-item">
-            <a className="nav-link" href="/dash">Dashboard</a>
-        </li>
+        <ul className="navbar-nav mb-2 mb-lg-0">
           <li className="nav-item">
-            <a className="nav-link" href="/profileU">Profile Update</a>
-        </li>
+            <a className="nav-link" href="/dash">
+              Dashboard
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/profileU">
+              Profile Update
+            </a>
+          </li>
+        </ul>
       </>
-    )
-
-  }
-  else{
-      menu = (
-          <>
-           <li className="nav-item active">
-        <a className="nav-link" href="/reg">Register </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="/log">Login</a>
-      </li>
-          </>
-      )
+    );
+  } else {
+    menu = (
+      <>
+        <ul className="navbar-nav mb-2 mb-lg-0">
+        <li className="nav-item active">
+          <a className="nav-link" href="/signup">
+            Register
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/login">
+            Login
+          </a>
+        </li>
+        </ul>
+      </>
+    );
   }
 
   return (
@@ -53,18 +62,18 @@ const Navigation = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-              <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link" to="about-us">
+                <Link className="nav-link" to="about-us">
                   About Us
                 </Link>
               </li>
 
               <li className="nav-item">
-              <Link className="nav-link" to="model-question">
+                <Link className="nav-link" to="model-question">
                   Model Question
                 </Link>
               </li>
@@ -76,7 +85,6 @@ const Navigation = () => {
                   Mock Test
                 </Link>
               </li>
-
 
               {/* Quiz QUESTION NAV LINKS */}
 
@@ -132,9 +140,11 @@ const Navigation = () => {
                 </ul>
               </li> */}
 
-
               <li className="nav-item">
-                <Link className="nav-link" to='contact-us'> Contact Us</Link>
+                <Link className="nav-link" to="contact-us">
+                  {" "}
+                  Contact Us
+                </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
