@@ -29,7 +29,8 @@ const Login= () =>{
                 // setCurrentUser(response.data.loginUser)
                 // console.log(currentUser)
 
-                
+                axios.post(`http://localhost:300/users/user`, {email: email}).then((response)=> setCurrentUser(response.data)
+                )
                 //redirects to home
                 window.location.replace("/")
             }
