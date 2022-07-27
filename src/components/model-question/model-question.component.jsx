@@ -23,9 +23,16 @@ const ModelQuestions = ({ models }) => {
           </button>
         </form>
 
-        <div className="filter ">
-          <span>Subject </span>
-          <span>Sort</span>
+        <div className="d-flex my-5">
+          <div className="bold m-2">Sort by: </div>
+          <div>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>---------------</option>
+            <option value="1">History</option>
+            <option value="2">Bilogy</option>
+            {/* <option value="3">Three</option> */}
+          </select>
+          </div>
         </div>
       </div>
 

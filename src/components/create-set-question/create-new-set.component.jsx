@@ -42,8 +42,8 @@ const CreateNewSet = () => {
 
       .then((response) => {
         console.log(response);
-        alert("New Set added Successfully!!")
-        window.location.reload("/model-questions")
+        alert("New Set added Successfully!!");
+        window.location.reload("/model-questions");
         return;
       })
       .catch((e) => {
@@ -187,14 +187,22 @@ const CreateNewSet = () => {
                 required: true,
               }}
             />
-              <div className='form-group'>
-                    <label>Add Set Photo</label>
-                         <input type='file' className="form-control" onChange={(e)=>{setImageUrl(e.target.files[0])}}/>
-                     </div>
+            <div className="form-group">
+              <label>Add Set Photo</label>
+              <input
+                type="file"
+                className="form-control"
+                onChange={(e) => {
+                  setImageUrl(e.target.files[0]);
+                }}
+              />
+            </div>
 
-                     <Button type="button" onClick={addSetHandler}>
+           <div className="d-flex justify-content-center">
+           <Button type="button"  onClick={addSetHandler}>
               Create a New Set
             </Button>
+           </div>
           </form>
         </div>
       </div>
