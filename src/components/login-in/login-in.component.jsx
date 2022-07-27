@@ -26,9 +26,10 @@ const Login= () =>{
                 //it will save the token locally, so that it is available all over the component
                 localStorage.setItem("ticket",response.data.token)
 
-                setCurrentUser(response.data.loginUser)
-                console.log(currentUser)
+                // setCurrentUser(response.data.loginUser)
+                // console.log(currentUser)
 
+                
                 //redirects to home
                 window.location.replace("/")
             }
