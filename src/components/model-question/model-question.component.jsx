@@ -20,14 +20,16 @@ const ModelQuestions = ({ models }) => {
 
       <div className="row">
         {models.map((model) => {
-          const {_id, setTitle, subject, setQuestions, time, imageUrl} = model;
-          {console.log(imageUrl)}
+          const { _id, setTitle, subject, setQuestions, time, imageUrl } =
+            model;
+          {
+            console.log(imageUrl);
+          }
           return (
             <div key={_id} className="col-lg-3">
               <Card
-                              id={_id}
-                              url={'model-questions'}
-
+                id={_id}
+                url={"model-questions"}
                 imageUrl={`http://localhost:300/${imageUrl}`}
                 title={setTitle}
                 subject={subject}
