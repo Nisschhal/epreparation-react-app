@@ -1,6 +1,6 @@
 // import Home from "./routes/home/home.component"
 import { Fragment, useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Switch } from "react-router-dom";
 import Home from "./components/home/home.component";
 import Footer from "./components/navigation/footer.component";
 
@@ -64,6 +64,7 @@ const App = () => {
     <Fragment>
       <Navigation />
       <Routes>
+
         <Route path="signup" element={<Register />}></Route>
         <Route path="login" element={<Login />}></Route>
 
@@ -85,15 +86,15 @@ const App = () => {
             }
         />
         <Route
-          path="model-question"
+          path="model-questions"
           element={<ModelQuestions models={modelQuestion} />}
         />
         <Route
-          path="update-model-questions/:id"
+          path="model-questions/:id"
           element={<UpdateSet />}
         />
         <Route
-          path="mock-question"
+          path="mock-questions"
           element={<MockQuestions mocks={mockQuestion} />}
         />
         <Route path="quiz" element={<QuizQuestions quizes={quizQuestion} />} />

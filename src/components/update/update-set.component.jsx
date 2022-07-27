@@ -18,7 +18,13 @@ const UpdateSet = () => {
   useEffect(() => {
     axios.get(`http://localhost:300/model-questions/${id}`).then((response) => {
       console.log(response.data);
-    //   const { subject, questionType, time, totalScore, set, setTitle, imageUrl } = response.data;
+      setSubject(response.data.subject);
+      setQuestionType(response.data.questionType);
+      setTime(response.data.time);
+      setTotalScore(response.data.totalScore);
+      setSet(response.data.set);
+      setSetTitle(response.data.setTitle);
+      setImageUrl(response.data.imageUrl);
     });
   }, []);
 
@@ -40,6 +46,7 @@ const UpdateSet = () => {
     data.append("set", set);
     data.append("setTitle", setTitle);
     data.append("imageUrl", imageUrl);
+    console.log("passing:",data);
 
     
 
@@ -50,9 +57,7 @@ const UpdateSet = () => {
       },
     };
 
-    axios
-      .patch(`http://localhost:300/model-questions/${id}`, data, config)
-
+    axios.patch(`http://localhost:300/model-questions/${id}`, data, config)
       .then((response) => {
         console.log(response);
         alert("Set Updated Successfully!!");
@@ -119,7 +124,7 @@ const UpdateSet = () => {
     <div className="row d-flex justify-content-center">
       <div className="col-6">
         <div className="sign-up-container">
-          <h2>Create a new Set</h2>
+          <h2>Update Set</h2>
           {/* <span>Sign up with Email/Password</span> */}
           {/* // set the changing variables into value so that they update the inpute fields as types go onChange */}
           {/* // once the form is being submitted trigger the below onSubmit function */}

@@ -79,7 +79,7 @@ const Navigation = () => {
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="model-question">
+                <Link className="nav-link" to="model-questions">
                   Model Question
                 </Link>
               </li>
@@ -87,7 +87,7 @@ const Navigation = () => {
               {/* MOCK QUESTION NAV LINKS */}
 
               <li className="nav-item">
-                <Link className="nav-link" to="mock-question">
+                <Link className="nav-link" to="mock-questions">
                   Mock Test
                 </Link>
               </li>

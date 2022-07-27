@@ -54,7 +54,7 @@ const Card = ({ id, title, subject, totalQuestions, time, imageUrl, url }) => {
             <Link
               className="col btn btn-outline-success p-0 m-0 card-link"
               // to={`update-${url}/${id}`}
-              to={`update-${url}/${id}`}
+              to={`${id}`}
             >
               Edit
             </Link>
