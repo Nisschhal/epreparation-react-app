@@ -1,9 +1,12 @@
 import axios from "axios";
+import {useParams} from 'react-router-dom';
 import React, { Fragment, useEffect, useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
 const UpdateSet = () => {
+    const {id} = useParams();
+    console.log(id);
   const [subject, setSubject] = useState("");
   const [questionType, setQuestionType] = useState("");
   const [time, setTime] = useState("");
@@ -15,7 +18,7 @@ const UpdateSet = () => {
   useEffect(() => {
     axios.get(`http://localhost:300/model-questions/${id}`).then((response) => {
       console.log(response.data);
-      const { subject, questionType, time, totalScore, set, setTitle, imageUrl } = response.data;
+    //   const { subject, questionType, time, totalScore, set, setTitle, imageUrl } = response.data;
     });
   }, []);
 
@@ -208,8 +211,8 @@ const UpdateSet = () => {
               />
             </div>
 
-            <Button type="button" onClick={addSetHandler}>
-              Create a New Set
+            <Button type="button" onClick={updateSetHandler}>
+              Update Set
             </Button>
           </form>
         </div>

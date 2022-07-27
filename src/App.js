@@ -16,6 +16,7 @@ import Register from "./components/sign-up/sign-up.component";
 import Login from "./components/login-in/login-in.component";
 import Dashboard from "./components/dashboard/dashboard.component";
 import PrivateRoute from "./components/private-route";
+import UpdateSet from "./components/update/update-set.component";
 const App = () => {
   const [modelQuestion, setModelQuestion] = useState([]);
 
@@ -86,6 +87,10 @@ const App = () => {
         <Route
           path="model-question"
           element={<ModelQuestions models={modelQuestion} />}
+        />
+        <Route
+          path="update-model-questions/:id"
+          element={<UpdateSet />}
         />
         <Route
           path="mock-question"
