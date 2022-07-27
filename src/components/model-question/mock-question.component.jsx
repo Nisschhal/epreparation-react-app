@@ -11,7 +11,18 @@ const MockQuestions = ({ mocks }) => {
       </div>
 
       <div className="d-flex justify-content-between">
-        <p>search</p>
+        <form className="d-flex my-5" role="search">
+          <input
+            className="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button className="btn btn-outline-success" type="submit">
+            Search
+          </button>
+        </form>
+
         <div className="filter ">
           <span>Subject </span>
           <span>Sort</span>
@@ -33,8 +44,6 @@ const MockQuestions = ({ mocks }) => {
           );
         })}
       </div>
-
-     
     </div>
   );
 };

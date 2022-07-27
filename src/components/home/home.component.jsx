@@ -7,7 +7,7 @@ const Home = ({models, mocks, quizes}) => {
   return (
     <Fragment>
       <div className="container text-center">
-        <p> working i guess</p>
+
         {/* <img src="..." className="img-fluid" alt="..." /> */}
         <div className="">
         <RecentQuestion recentTitle="Recent Model Question" url="model-questions" questions={models} />
