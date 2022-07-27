@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { Fragment } from "react";
 import QuestionTest from "../model-question/test.compnent";
 import { Link } from "react-router-dom";
-
+import "./card.style.css"
 const Card = ({ id, title, subject, totalQuestions, time, imageUrl, url }) => {
   const config = {
     headers: {
@@ -37,12 +37,12 @@ const Card = ({ id, title, subject, totalQuestions, time, imageUrl, url }) => {
         <div className="card-body">
           <h5 className="card-title">{capitalizeFirst(title)}</h5>
           <h6 className="card-subtitle mb-2 text-muted">{capitalizeFirst(subject)}</h6>
-          <div className="row">
-            <span className="col card-text">{totalQuestions} Questions</span>
-            <span className="col card-text">{time}</span>
+          <div className="row text-muted my-1">
+            <span className="col card-text">{totalQuestions}0 Questions</span>
+            <span className="col card-text">{time}:00 minutes</span>
           </div>
           <div className="row">
-            <div className="col">Free</div>
+            <div className="col bold">Free</div>
             {/* <button
               type="button"
               onClick={() => {
@@ -61,22 +61,22 @@ const Card = ({ id, title, subject, totalQuestions, time, imageUrl, url }) => {
               // to={`update-${url}/${id}`}
               to={`take-quiz/${id}`}
             >
-              Take Test
+              View
             </Link>
-            <Link
+            {/* <Link
               className="col btn btn-outline-success p-0 m-0 card-link"
               // to={`update-${url}/${id}`}
               to={`${id}`}
             >
               Edit
-            </Link>
-            <button
+            </Link> */}
+            {/* <button
               type="button"
               onClick={() => deleteSet()}
               className="col btn btn-outline-success p-0 m-0 card-link"
             >
               Delete
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

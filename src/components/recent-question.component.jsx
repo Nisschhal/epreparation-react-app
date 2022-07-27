@@ -24,7 +24,7 @@ const RecentQuestion = ({ recentTitle, url, questions }) => {
           );
         })}
       </div>
-      <Link className="btn btn-secondary" to={`${url}`}>
+      <Link className="btn btn-secondary m-4" to={`${url}`}>
         View All
       </Link>
     </Fragment>
