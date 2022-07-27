@@ -17,6 +17,7 @@ import Login from "./components/login-in/login-in.component";
 import Dashboard from "./components/dashboard/dashboard.component";
 import PrivateRoute from "./components/private-route";
 import UpdateSet from "./components/update/update-set.component";
+import TakeQuiz from "./components/take-quiz/take-quiz.component";
 const App = () => {
   const [modelQuestion, setModelQuestion] = useState([]);
 
@@ -102,6 +103,7 @@ const App = () => {
         {/* <Route path="test/:id" element={<QuestionTest />} /> */}
 
         <Route path="new-set" element={<CreateNewSet />} />
+        <Route path="take-quiz/:id" element={<TakeQuiz />} />
       </Routes>
       <Footer />
     </Fragment>

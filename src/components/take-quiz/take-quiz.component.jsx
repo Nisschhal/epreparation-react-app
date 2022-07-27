@@ -1,12 +1,30 @@
 import React, { useState } from "react";
+import {useParams} from 'react-router-dom';
+
 import "./take-quiz.css"
 function TakeQuiz() {
   // Properties
 
-  const { id } = useP
+   const {id} = useParams();
+
   const [showResults, setShowResults] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
+  // const [questions, setQuestions] = useState();
+  
+  // useEffect(() => {
+  //   axios.get(`http://localhost:300/model-questions/${id}`).then((response) => {
+  //     console.log(response.data);
+  //     setSubject(response.data.subject);
+  //     setQuestionType(response.data.questionType);
+  //     setTime(response.data.time);
+  //     setTotalScore(response.data.totalScore);
+  //     setSet(response.data.set);
+  //     setSetTitle(response.data.setTitle);
+  //     setImageUrl(response.data.imageUrl);
+  //   });
+  // }, []);
+
 
   const questions = [
     {
@@ -80,7 +98,7 @@ function TakeQuiz() {
   };
 
   return (
-    <div className="App">
+    <div className="quiz">
       {/* 1. Header  */}
       <h1>USA Quiz 🇺🇸</h1>
 
@@ -108,10 +126,10 @@ function TakeQuiz() {
           <h3 className="question-text">{questions[currentQuestion].text}</h3>
 
           {/* List of possible answers  */}
-          <ul>
+          <ul className="uls">
             {questions[currentQuestion].options.map((option) => {
               return (
-                <li
+                <li className="lis"
                   key={option.id}
                   onClick={() => optionClicked(option.isCorrect)}
                 >
