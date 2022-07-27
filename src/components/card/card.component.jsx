@@ -24,16 +24,21 @@ const Card = ({ id, title, subject, totalQuestions, time, imageUrl, url }) => {
       });
   };
 
+  const capitalizeFirst = str => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+
   return (
     <Fragment>
       <div className="card">
         <img class="card-img-top" src={imageUrl} alt="Card image cap" />
 
         <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <h6 className="card-subtitle mb-2 text-muted">{subject}</h6>
+          <h5 className="card-title">{capitalizeFirst(title)}</h5>
+          <h6 className="card-subtitle mb-2 text-muted">{capitalizeFirst(subject)}</h6>
           <div className="row">
-            <span className="col card-text">{totalQuestions} question</span>
+            <span className="col card-text">{totalQuestions} Questions</span>
             <span className="col card-text">{time}</span>
           </div>
           <div className="row">

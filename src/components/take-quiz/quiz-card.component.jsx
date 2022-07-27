@@ -95,11 +95,16 @@ function QuizCard({questionSet, questions}) {
 
   };
 
+  const capitalizeFirst = str => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+
   return (
     <div className="quiz">
       {/* 1. Header  */}
-      <h1>{questionSet.questionType}</h1>
-      <h3>{questionSet.subject}</h3>
+      <h1>{capitalizeFirst(questionSet.questionType)}</h1>
+      <h3>{capitalizeFirst(questionSet.subject)}</h3>
 
       {/* 2. Current Score  */}
       <h2>Score: {score}</h2>
