@@ -3,12 +3,15 @@ import {useState} from 'react';
 import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
+import {  useContext  } from 'react';
+import { UserContext } from '../../context/user.context';
 
 const Login= () =>{
     const [email, setEmail] = useState('');
     const [password, setPasword] = useState('');
     // const [message, setMessage] = useState("");
-   
+    const { currentUser, setCurrentUser } = useContext(UserContext);
+
     const Login=(e)=>{
         e.preventDefault();
         const data ={
@@ -17,10 +20,14 @@ const Login= () =>{
         }
         axios.post("http://localhost:300/users/login",data)
         .then(response=>{
-            console.log(response.data.token)
+            console.log("dataaaaaaaaaaa", response.data.loginUser)
+            alert(response.data.loginUser)
             if(response.data.token){
                 //it will save the token locally, so that it is available all over the component
                 localStorage.setItem("ticket",response.data.token)
+
+                setCurrentUser(response.data.loginUser)
+                console.log(currentUser)
 
                 //redirects to home
                 window.location.replace("/")

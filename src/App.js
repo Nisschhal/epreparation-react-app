@@ -104,6 +104,9 @@ const App = () => {
 
         <Route path="new-set" element={<CreateNewSet />} />
         <Route path="take-quiz/:id" element={<TakeQuiz />} />
+        <Route path="model-questions/take-quiz/:id" element={<TakeQuiz />} />
+        <Route path="mock-questions/take-quiz/:id" element={<TakeQuiz />} />
+        <Route path="quiz/take-quiz/:id" element={<TakeQuiz />} />
       </Routes>
       <Footer />
     </Fragment>

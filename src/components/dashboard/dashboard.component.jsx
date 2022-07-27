@@ -1,9 +1,17 @@
 import React from 'react';
 import axios from 'axios';
+import {  useContext  } from 'react';
+
 import {useEffect, useState} from 'react';
 import Logout from "../log-out";
 
+
+import { UserContext } from '../../context/user.context';
+
 const Dashboard=()=>{
+    const { currentUser, setCurrentUser } = useContext(UserContext);
+    console.log(currentUser)
+    
 
     const [details, setDetails] = useState('');
 
@@ -14,7 +22,7 @@ const Dashboard=()=>{
             Authorization: "Bearer " + localStorage.getItem("ticket"),
         }
     }
-    //page load hune bela mai
+    // page load hune bela mai
     useEffect(()=>{
         axios.get("http://localhost:300/users/dashboard",config)
         .then(response=>{
@@ -30,10 +38,11 @@ const Dashboard=()=>{
         <div className="container bg-primary">
             <div className="row">
                 <div className="col-md-4">
-                    <h1> Dashboard</h1>
-                    <p>Full Name  : {details.displayName} </p>
-                    <p>Email: {details.email} </p>
-                    <p>PhoneNumber: {details.phoneNumber} </p>
+                    {details}
+                    {/* <h1> Dashboard</h1>
+                    <p>Full Name  : {currentUser.displayName} </p>
+                    <p>Email: {currentUser.email} </p>
+                    <p>PhoneNumber: {currentUser.phoneNumber} </p> */}
 
                     <div>
                         <button>Update</button>
