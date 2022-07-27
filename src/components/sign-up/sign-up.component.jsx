@@ -131,7 +131,7 @@ const Register = () => {
               }}
             />
             <FormInput
-              label="password"
+              label="Password"
               inputOptions={{
                 type: "password",
                 onChange: (e) => {
@@ -143,7 +143,7 @@ const Register = () => {
               }}
             />
             <FormInput
-              label="confirmPassword"
+              label="ConfirmPassword"
               inputOptions={{
                 type: "password",
                 onChange: (e) => {

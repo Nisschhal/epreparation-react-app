@@ -43,13 +43,13 @@ const Login= () =>{
         })
     }
     return (
-        <div className="sign-in-container text-center">
+        <div className="sign-in-container text-center ">
           <h2>I already have an account</h2>
           <span>Sign in with Email/Password</span>
           {/* // set the changing variables into value so that they update the inpute fields as types go onChange */}
           {/* // once the form is being submitted trigger the below onSubmit function */}
-          <div className="row d-flex justify-content-center">
-            <div className="col-md-6">
+          <div className="row d-flex justify-content-center ">
+            <div className="col-md-6 shadow-sm p-3 mb-5 bg-white rounded">
             <form>
             <FormInput
               label="Email"

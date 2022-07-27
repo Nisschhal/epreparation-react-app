@@ -8,7 +8,7 @@ const Navigation = () => {
   if (localStorage.getItem("ticket")) {
     menu = (
       <>
-        <ul className="navbar-nav mb-2 mb-lg-0">
+        <ul className="navbar-nav mb-2 mb-lg-0 ">
           <li className="nav-item">
             <a className="nav-link" href="/dashboard">
               Dashboard
@@ -48,10 +48,10 @@ const Navigation = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar navbar-expand-lg bg-light shadow p-3 mb-5 bg-white rounded" >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            epraparation
+            ePreparation
           </Link>
 
           <button
