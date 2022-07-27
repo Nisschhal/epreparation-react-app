@@ -34,7 +34,7 @@ const NewQuestion= () =>{
             }
         }
 
-        axios.post("http://localhost:90/product/insert",data, config)
+        axios.post("http://localhost:300/modx`/insert",data, config)
         
         .then(response=>{
             console.log(response)
