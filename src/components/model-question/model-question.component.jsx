@@ -20,7 +20,7 @@ const ModelQuestions = ({ models }) => {
 
       <div className="row">
         {models.map((model) => {
-          const { _id, setTitle, subject, setQuestions, time, imageUrl } =
+          const { _id, setTitle, subject, questions, time, imageUrl } =
             model;
           {
             console.log(imageUrl);
@@ -33,7 +33,7 @@ const ModelQuestions = ({ models }) => {
                 imageUrl={`http://localhost:300/${imageUrl}`}
                 title={setTitle}
                 subject={subject}
-                totalQuestions={setQuestions.length}
+                totalQuestions={questions.length}
                 time={time}
               />
             </div>

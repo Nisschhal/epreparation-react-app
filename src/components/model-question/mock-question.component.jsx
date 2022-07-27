@@ -20,13 +20,13 @@ const MockQuestions = ({ mocks }) => {
 
       <div className="row">
         {mocks.map((mock) => {
-          const { _id, setTitle, subject, setQuestions, time } = mock;
+          const { _id, setTitle, subject, questions, time } = mock;
           return (
             <div key={_id} className="col-lg-3">
               <Card
                 title={setTitle}
                 subject={subject}
-                totalQuestions={setQuestions.length}
+                totalQuestions={questions.length}
                 time={time}
               />
             </div>
