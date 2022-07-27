@@ -17,7 +17,7 @@ const RecentQuestion = ({ recentTitle, url, questions }) => {
                 imageUrl={`http://localhost:300/${imageUrl}`}
                 title={setTitle}
                 subject={subject}
-                totalQuestions={setQuestions.length}
+                totalQuestions={questions.length}
                 time={time}
               />
             </div>

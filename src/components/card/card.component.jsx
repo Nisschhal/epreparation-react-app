@@ -38,7 +38,7 @@ const Card = ({ id, title, subject, totalQuestions, time, imageUrl, url }) => {
           </div>
           <div className="row">
             <div className="col">Free</div>
-            <button
+            {/* <button
               type="button"
               onClick={() => {
                 console.log();
@@ -46,11 +46,18 @@ const Card = ({ id, title, subject, totalQuestions, time, imageUrl, url }) => {
               className="col btn btn-outline-success p-0 m-0 card-link"
             >
               View
-            </button>
+            </button> */}
             {/* <button type="button" onClick={()=> {console.log()}} className="col btn btn-outline-success p-0 m-0 card-link">
             Edit
           </button> */}
 
+            <Link
+              className="col btn btn-outline-success p-0 m-0 card-link"
+              // to={`update-${url}/${id}`}
+              to={`take-quiz/${id}`}
+            >
+              Take Test
+            </Link>
             <Link
               className="col btn btn-outline-success p-0 m-0 card-link"
               // to={`update-${url}/${id}`}
