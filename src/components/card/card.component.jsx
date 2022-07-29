@@ -15,8 +15,8 @@ const Card = ({ id, title, subject, totalQuestions, time, imageUrl, url }) => {
       .then((result) => {
         console.log(result);
         if (result.data.success) {
-          alert("Question Set Deleted Successfully!!");
         }
+        alert("Question Set Deleted Successfully!!");
         window.location.reload();
       })
       .catch((e) => {
@@ -63,20 +63,20 @@ const Card = ({ id, title, subject, totalQuestions, time, imageUrl, url }) => {
             >
               View
             </Link>
-            {/* <Link
-              className="col btn btn-outline-success p-0 m-0 card-link"
+            <Link
+              className="col btn btn-outline-primary p-0 m-0 card-link"
               // to={`update-${url}/${id}`}
               to={`${id}`}
             >
               Edit
-            </Link> */}
-            {/* <button
+            </Link>
+            <button
               type="button"
               onClick={() => deleteSet()}
-              className="col btn btn-outline-success p-0 m-0 card-link"
+              className="col btn btn-outline-danger p-0 m-0 card-link"
             >
               Delete
-            </button> */}
+            </button>
           </div>
         </div>
       </div>

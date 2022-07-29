@@ -7,7 +7,7 @@ const ModelQuestions = ({ models }) => {
     <div className="container">
       <div className="d-flex justify-content-between">
         <h3>Model Question</h3>
-        <button className="btn btn-success">Go to Home</button>
+        <button className="btn btn-success">Go to Dashboard</button>
       </div>
 
       <div className="d-flex justify-content-between">
@@ -50,7 +50,7 @@ const ModelQuestions = ({ models }) => {
                 imageUrl={`http://localhost:300/${imageUrl}`}
                 title={setTitle}
                 subject={subject}
-                totalQuestions={questions.length}
+                totalQuestions={2}
                 time={time}
               />
             </div>

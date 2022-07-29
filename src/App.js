@@ -18,6 +18,7 @@ import Dashboard from "./components/dashboard/dashboard.component";
 import PrivateRoute from "./components/private-route";
 import UpdateSet from "./components/update/update-set.component";
 import TakeQuiz from "./components/take-quiz/take-quiz.component";
+import Profile from "./components/profile/profile-page.component";
 const App = () => {
   const [modelQuestion, setModelQuestion] = useState([]);
 
@@ -107,6 +108,7 @@ const App = () => {
         <Route path="model-questions/take-quiz/:id" element={<TakeQuiz />} />
         <Route path="mock-questions/take-quiz/:id" element={<TakeQuiz />} />
         <Route path="quiz/take-quiz/:id" element={<TakeQuiz />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
       <Footer />
     </Fragment>
