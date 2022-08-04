@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import React from "react";
 
@@ -17,6 +17,18 @@ const Profile = () => {
 
   const {id} = useParams();
 
+  useEffect(() => {
+    axios.get(`http://localhost:300/users/${id}`)
+  .then((response) => {
+    console.log(response.data);
+    setDisplayName(response.data.displayName);
+    setEmail(response.data.email);
+    setPhoneNumber(response.data.phoneNumber);
+    setPassword(response.data.password);
+    setConfirmPassword(response.data.confirmPassword);
+  })
+  .catch();
+  });
 
   const updateUser = (e) => {
     e.preventDefault();
@@ -35,15 +47,14 @@ const Profile = () => {
 
     console.log(data);
 
-    axios.post(`http://localhost:300/users/${id}`, data)
+    axios.patch(`http://localhost:300/users/${id}`, data)
       .then((response) => {
-        if ((response.data.msg = "Registered")) {
-          alert("User registered successfully");
-          window.location.reload("login");
-        } else {
-          alert("Failed to register");
-        }
-        console.log(response);
+        console.log(response.data);
+        setDisplayName(response.data.displayName);
+        setEmail(response.data.email);
+        setPhoneNumber(response.data.phoneNumber);
+        setPassword(response.data.password);
+        setConfirmPassword(response.data.confirmPassword);
       })
       .catch();
   };
@@ -52,7 +63,7 @@ const Profile = () => {
     <div className="container">
       <div className="row d-flex justify-content-center">
         <div className="col-md-4">
-          <h1>Register</h1>
+          <h1>Update Profile</h1>
 
           {/* <p>{message}</p> */}
           {/* <form>

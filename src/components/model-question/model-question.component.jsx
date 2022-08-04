@@ -1,7 +1,15 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import Card from "../card/card.component";
 
 const ModelQuestions = ({ models }) => {
+  const [modelQuestions, setModelQuestions] = useState(models);
+
+  const getHistory = () => {
+    axios.get("http://localhost:300/history").then((response) => {
+      setModelQuestions(response.data);
+    });
+  };
   console.log("i am in model com ", models);
   return (
     <div className="container">
@@ -28,7 +36,7 @@ const ModelQuestions = ({ models }) => {
           <div>
           <select class="form-select" aria-label="Default select example">
             <option selected>---------------</option>
-            <option value="1">History</option>
+            <option value="1" onClick={getHistory}>History</option>
             <option value="2">Bilogy</option>
             {/* <option value="3">Three</option> */}
           </select>

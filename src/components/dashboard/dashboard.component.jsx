@@ -9,12 +9,12 @@ import Logout from "../log-out";
 import { UserContext } from '../../context/user.context';
 
 const Dashboard=()=>{
-    const { currentUser, setCurrentUser } = useContext
+    // const { currentUser, setCurrentUser } = useContext
     
-    setCurrentUser({displayName: "nischalpuri", email: "mrnischalpuri@gmail.com", phoneNumber: "9818275115"})
+    // setCurrentUser({displayName: "nischalpuri", email: "mrnischalpuri@gmail.com", phoneNumber: "9818275115"})
     
-    (UserContext);
-    console.log(currentUser)
+    // (UserContext);
+    // console.log(currentUser)
     
 
     const [details, setDetails] = useState('');
@@ -44,9 +44,9 @@ const Dashboard=()=>{
                 <div className="col-md-4">
                     {details}
                     <h1> Dashboard</h1>
-                    <p>Full Name  : {currentUser.displayName} </p>
+                    {/* <p>Full Name  : {currentUser.displayName} </p>
                     <p>Email: {currentUser.email} </p>
-                    <p>PhoneNumber: {currentUser.phoneNumber} </p>
+                    <p>PhoneNumber: {currentUser.phoneNumber} </p> */}
 
                     <div>
                         <button>Update</button>

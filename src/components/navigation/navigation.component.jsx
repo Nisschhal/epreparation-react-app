@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import Logout from "../log-out";
 
 const Navigation = () => {
+
+  const config = {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("ticket"),
+    },
+  };
   // checking if the user is logged in
   var menu;
   if (localStorage.getItem("ticket")) {
@@ -15,7 +21,7 @@ const Navigation = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/profileU">
+            <a className="nav-link" href="/profile">
               Profile Update
             </a>
           </li>
