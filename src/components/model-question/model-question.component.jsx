@@ -1,14 +1,30 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../card/card.component";
 
 const ModelQuestions = ({ models }) => {
-  const [modelQuestions, setModelQuestions] = useState(models);
+  const [searchText, setSearchText] = useState("");
+  const [filteredMosters, setFilteredMonsters] = useState([]);
 
   const getHistory = () => {
     axios.get("http://localhost:300/history").then((response) => {
-      setModelQuestions(response.data);
+      // setModelQuestions(response.data);
     });
+  };
+
+  useEffect(() => {
+    const newfilteredMosters = models.filter((model) => {
+      return model.subject.toLocaleLowerCase().includes(searchText);
+    }); // evaluates the changes using the state.searchText
+    setFilteredMonsters(newfilteredMosters);
+  }, [models, searchText]);
+
+  const onSearchChange = (event) => {
+    const searchTextField = event.target.value.toLocaleLowerCase(); // get the data from input field
+    setSearchText(
+      // calls the render again to update the changes
+      searchTextField
+    );
   };
   console.log("i am in model com ", models);
   return (
@@ -25,6 +41,7 @@ const ModelQuestions = ({ models }) => {
             type="search"
             placeholder="Search"
             aria-label="Search"
+            onChange={onSearchChange}
           />
           <button className="btn btn-outline-success" type="submit">
             Search
@@ -45,7 +62,7 @@ const ModelQuestions = ({ models }) => {
       </div>
 
       <div className="row">
-        {models.map((model) => {
+        {filteredMosters.map((model) => {
           const { _id, setTitle, subject, questions, time, imageUrl } = model;
           {
             console.log(imageUrl);

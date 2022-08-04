@@ -15,17 +15,17 @@ const Profile = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  const {id} = useParams();
+  // const {id} = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:300/users/${id}`)
+    axios.get(`http://localhost:300/users/62df7c2f513fbae912ff3b95`)
   .then((response) => {
     console.log(response.data);
     setDisplayName(response.data.displayName);
     setEmail(response.data.email);
     setPhoneNumber(response.data.phoneNumber);
-    setPassword(response.data.password);
-    setConfirmPassword(response.data.confirmPassword);
+    // setPassword(response.data.password);
+    // setConfirmPassword(response.data.confirmPassword);
   })
   .catch();
   });
@@ -47,14 +47,14 @@ const Profile = () => {
 
     console.log(data);
 
-    axios.patch(`http://localhost:300/users/${id}`, data)
+    axios.patch(`http://localhost:300/users/62df7c2f513fbae912ff3b95`, data)
       .then((response) => {
         console.log(response.data);
         setDisplayName(response.data.displayName);
         setEmail(response.data.email);
         setPhoneNumber(response.data.phoneNumber);
-        setPassword(response.data.password);
-        setConfirmPassword(response.data.confirmPassword);
+        // setPassword(response.data.password);
+        // setConfirmPassword(response.data.confirmPassword);
       })
       .catch();
   };

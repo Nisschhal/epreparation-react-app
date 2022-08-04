@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "../card/card.component";
 
 const MockQuestions = ({ mocks }) => {
+  const [searchText, setSearchText] = useState("");
+  const [filteredMosters, setFilteredMonsters] = useState([]);
+
+  useEffect(() => {
+    const newfilteredMosters = mocks.filter((mock) => {
+      return mock.subject.toLocaleLowerCase().includes(searchText);
+    }); // evaluates the changes using the state.searchText
+    setFilteredMonsters(newfilteredMosters);
+  }, [mocks, searchText]);
+
+  const onSearchChange = (event) => {
+    const searchTextField = event.target.value.toLocaleLowerCase(); // get the data from input field
+    setSearchText(
+      // calls the render again to update the changes
+      searchTextField
+    );
+  };
+  console.log("i am in model com ", mocks);
   return (
     <div className="container">
       <div className="d-flex justify-content-between">
@@ -17,6 +35,8 @@ const MockQuestions = ({ mocks }) => {
             type="search"
             placeholder="Search"
             aria-label="Search"
+            onChange={onSearchChange}
+
           />
           <button className="btn btn-outline-success" type="submit">
             Search
@@ -37,7 +57,7 @@ const MockQuestions = ({ mocks }) => {
       </div>
 
       <div className="row">
-        {mocks.map((mock) => {
+        {filteredMosters.map((mock) => {
           const { _id, setTitle, subject, questions, time, imageUrl } = mock;
           return (
             <div key={_id} className="col-lg-3">

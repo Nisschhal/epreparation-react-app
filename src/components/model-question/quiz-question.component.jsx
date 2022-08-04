@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import Card from '../card/card.component';
 
 const QuizQuestions = ({ quizes }) => {
+  const [searchText, setSearchText] = useState("");
+  const [filteredMosters, setFilteredMonsters] = useState([]);
+
+  useEffect(() => {
+    const newfilteredMosters = quizes.filter((quiz) => {
+      return quiz.subject.toLocaleLowerCase().includes(searchText);
+    }); // evaluates the changes using the state.searchText
+    setFilteredMonsters(newfilteredMosters);
+  }, [quizes, searchText]);
+
+  const onSearchChange = (event) => {
+    const searchTextField = event.target.value.toLocaleLowerCase(); // get the data from input field
+    setSearchText(
+      // calls the render again to update the changes
+      searchTextField
+    );
+  };
+  console.log("i am in model com ", quizes);
+
     return (
         <div className='container'>
             <div className="d-flex justify-content-between">
@@ -16,6 +35,8 @@ const QuizQuestions = ({ quizes }) => {
             type="search"
             placeholder="Search"
             aria-label="Search"
+            onChange={onSearchChange}
+
           />
           <button className="btn btn-outline-success" type="submit">
             Search
@@ -36,7 +57,7 @@ const QuizQuestions = ({ quizes }) => {
 
             
             <div className="row">
-        {quizes.map((quiz) => {
+        {filteredMosters.map((quiz) => {
            const {_id, setTitle, subject, questions, time, imageUrl} = quiz;
           return (
             <div key={_id} className="col-lg-3">

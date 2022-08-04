@@ -4,7 +4,7 @@ const FormInput = ({ label, inputOptions}) => {
     return (
         <div className="group">
             {/* // sibling for shrink effect */}
-            <input className=" form-input"{  ...inputOptions}/>
+            <input className=" form-input"{...inputOptions}/>
         {
         label && (
             <label className={`${inputOptions.value.length ? 'shrink' : '' } form-input-label`}>{label}</label>

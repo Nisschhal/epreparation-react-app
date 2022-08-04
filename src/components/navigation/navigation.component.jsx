@@ -22,7 +22,7 @@ const Navigation = () => {
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/profile">
-              Profile Update
+              User
             </a>
           </li>
           <li className="nav-item">
